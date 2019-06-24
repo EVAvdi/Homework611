@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -96,15 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean onKeyLongPress(int keyCode, KeyEvent event){
         super.onKeyLongPress(keyCode, event);
-        if(keyCode == event.KEYCODE_VOLUME_DOWN){
-            Toast toast = Toast.makeText(this, "KeyLongPress"+keyCode,
-                    Toast.LENGTH_SHORT); toast.show();
-            return true;
-        }else if(keyCode == event.KEYCODE_VOLUME_UP){
-            Toast toast = Toast.makeText(this, "KeyLongPress"+keyCode,
-                    Toast.LENGTH_SHORT); toast.show();
-            return true;
-        }
+        ourText.append("\n LongPress"+this);
         Log.d(TAG,"OnKeyLongPress"+this);
         return onKeyLongPress(keyCode,event);
     }
@@ -112,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
            ourText.append("\n KeyCode"+keyCode);
         super.onKeyDown(keyCode, event);
         Log.d(TAG, "OnKeyCode"+this);
-        return onKeyLongPress(keyCode, event);
+        return onKeyDown(keyCode, event);
     }
 
     @Override
