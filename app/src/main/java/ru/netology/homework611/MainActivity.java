@@ -97,13 +97,13 @@ public class MainActivity extends AppCompatActivity {
         super.onKeyLongPress(keyCode, event);
         ourText.append("\n LongPress"+this);
         Log.d(TAG,"OnKeyLongPress"+this);
-        return onKeyLongPress(keyCode,event);
+        return super.onKeyLongPress(keyCode,event);
     }
        public boolean onKeyDown(int keyCode, KeyEvent event){
            ourText.append("\n KeyCode"+keyCode);
         super.onKeyDown(keyCode, event);
         Log.d(TAG, "OnKeyCode"+this);
-        return onKeyDown(keyCode, event);
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
